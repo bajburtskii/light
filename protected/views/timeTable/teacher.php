@@ -100,7 +100,7 @@ HTML;
             'maxLessons' => array(),
         ));
 
-        $url = $this->createUrl('timetable/userPhoto', array('_id' => $model->teacher, 'type' => Users::FOTO_P1));
+       $url = $this->createUrl('site/userPhoto', array('_id' => $model->teacher, 'type' => Users::FOTO_P1));
         echo <<<HTML
 <div id="dialog-message" class="hide">
     <div id="foto">

@@ -127,15 +127,4 @@ class TimeTableController extends Controller
             'occupiedRooms' => $occupiedRooms,
         ));
     }
-
-    public function actionUserPhoto()
-    {
-        $id   = Yii::app()->request->getParam('_id', null);
-        $type = Yii::app()->request->getParam('type', null);
-
-        if (is_null($id) || is_null($type))
-            throw new CHttpException(404, 'Invalid request. Please do not repeat this request again.');
-
-        Users::model()->renderPhoto($id, $type);
-    }
 }
