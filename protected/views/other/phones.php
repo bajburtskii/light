@@ -6,6 +6,12 @@
 Yii::app()->clientScript->registerPackage('dataTables');
 Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/other/phones.js', CClientScript::POS_HEAD);
 
+$url = Yii::app()->baseUrl.'/images/keyboard.png';
+Yii::app()->clientScript->registerScript('params', <<<JS
+    var imageUrl = '{$url}'
+JS
+ , CClientScript::POS_HEAD
+);
 
 $this->pageHeader=tt('Телефонный справочник');
 $this->breadcrumbs=array(
@@ -21,6 +27,8 @@ $this->breadcrumbs=array(
         echo CHtml::dropDownList('department', $department, $departments, array('empty' => 'Все'));
     ?>
 </form>
+
+<input type="text" class="keyboardInput" id="customSearch" placeholder="<?=tt('Поиск')?>">
 
 <table id="phones" class="table table-striped table-bordered table-hover">
     <thead>

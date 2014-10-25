@@ -40,6 +40,11 @@
         Yii::app()->clientScript->registerPackage('chosen');
         Yii::app()->clientScript->registerPackage('spin');
     ?>
+
+    <!-- virtual keyboard -->
+    <link rel="stylesheet" href="<?=Yii::app()->baseUrl?>/css/keyboard.css" />
+    <script src="<?=Yii::app()->baseUrl?>/js/keyboard.js"></script>
+
 </head>
 
 <body>

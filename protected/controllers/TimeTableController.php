@@ -4,28 +4,6 @@ class TimeTableController extends Controller
 {
     public $defaultAction = 'teacher';
 
-    public function filters() {
-
-        return array(
-            //'accessControl',
-        );
-    }
-
-    public function accessRules() {
-
-        return array(
-            array('allow',
-                'actions' => array(
-                ),
-                'expression' => 'Yii::app()->user->isAdmin || Yii::app()->user->isTch',
-            ),
-            array('deny',
-                'users' => array('*'),
-            ),
-        );
-    }
-
-
     public function actionTeacher()
     {
         $model = new TimeTableForm;
@@ -148,5 +126,16 @@ class TimeTableController extends Controller
             'classrooms'    => $classrooms,
             'occupiedRooms' => $occupiedRooms,
         ));
+    }
+
+    public function actionUserPhoto()
+    {
+        $id   = Yii::app()->request->getParam('_id', null);
+        $type = Yii::app()->request->getParam('type', null);
+
+        if (is_null($id) || is_null($type))
+            throw new CHttpException(404, 'Invalid request. Please do not repeat this request again.');
+
+        Users::model()->renderPhoto($id, $type);
     }
 }
