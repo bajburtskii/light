@@ -183,16 +183,16 @@ class Users extends CActiveRecord
         }
     }
 
-    public function renderPhoto($id, $type)
+    public function renderPhoto($foto1, $type)
     {
         $sql = <<<SQL
         SELECT foto3 as foto
         FROM foto
-        WHERE foto1 = {$id} AND foto2 = {$type}
+        WHERE foto1 = {$foto1} AND foto2 = {$type}
 SQL;
 
         $string = Yii::app()->db->connectionString;
-        $parts = explode('=', $string);
+        $parts  = explode('=', $string);
 
         $host     = $parts[1].'D';
         $login    = Yii::app()->db->username;

@@ -37,7 +37,6 @@ $this->breadcrumbs=array(
             <th><?=tt('Отдел').' / '.tt('Кафедра')?></th>
             <th style="width:10%"><?=tt('Должность')?></th>
             <th style="width:20%"><?=tt('Сотрудник')?></th>
-
             <th class="hidden-phone" style="width:11%">
                 <i class="icon-bell bigger-110 hidden-phone"></i>
                 <?=tt('Внешний тел.')?>
@@ -54,24 +53,22 @@ $this->breadcrumbs=array(
         $html = '';
         foreach ($phones as $phone) {
             $html .= <<<HTML
-<tr>
-    <td>$phone[tsg2]</td>
-    <td>$phone[tso3]</td>
-    <td>$phone[b2]</td>
-    <td>$phone[teacher]</td>
-    <td>
-        <span class="label label-warning">$phone[tso7]</span>
-    </td>
-    <td>
-        <span class="label label-success">$phone[tso8]</span>
-    </td>
-</tr>
+            <tr>
+                <td>$phone[tsg2]</td>
+                <td>$phone[k3]</td>
+                <td>$phone[b2]</td>
+                <td>$phone[teacher]</td>
+                <td>
+                    <span class="label label-warning">$phone[tso7]</span>
+                </td>
+                <td>
+                    <span class="label label-success">$phone[tso8]</span>
+                </td>
+            </tr>
 HTML;
         }
-    echo $html;
-
+        echo $html;
     ?>
-
     </tbody>
 </table>
 

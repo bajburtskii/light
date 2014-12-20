@@ -17,10 +17,6 @@ class SiteController extends Controller
         }
     }
 
-
-
-
-
     public function actionUserPhoto()
     {
         $id   = Yii::app()->request->getParam('_id', null);
